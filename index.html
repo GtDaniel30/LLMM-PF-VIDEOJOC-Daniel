@@ -1,245 +1,56 @@
 <!DOCTYPE html>
-<html lang="es">
-
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>League of Skillshots</title>
-    <style>
-        body {
-            margin: 0;
-            overflow: hidden;
-            background: #0b0f14;
-            font-family: Arial, sans-serif;
-        }
-
-        canvas {
-            display: block;
-            margin: auto;
-            background: #111822;
-        }
-
-        .ui {
-            position: absolute;
-            top: 10px;
-            left: 50%;
-            transform: translateX(-50%);
-            color: white;
-            text-align: center;
-        }
-
-        .bar {
-            width: 200px;
-            height: 15px;
-            background: #333;
-            margin: 5px auto;
-        }
-
-        .fill {
-            height: 100%;
-            background: #00ff88;
-        }
-    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TIC TAC TOE</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
-
-<body>
-
-    <div class="ui">
-        <div>Vida</div>
-        <div class="bar">
-            <div id="hp" class="fill"></div>
+<body>  
+    
+    <div id="Juego">
+        <h1>TIC TAC TOE</h1>
+        <div id= "Celdas">
+            <div cellIndex="0" class="celda"></div>
+            <div cellIndex="1" class="celda"></div>
+            <div cellIndex="2" class="celda"></div>
+            <div cellIndex="3" class="celda"></div>
+            <div cellIndex="4" class="celda"></div>
+            <div cellIndex="5" class="celda"></div>
+            <div cellIndex="6" class="celda"></div>
+            <div cellIndex="7" class="celda"></div>
+            <div cellIndex="8" class="celda"></div>
         </div>
-        <div>Q Cooldown</div>
-        <div class="bar">
-            <div id="cd" class="fill" style="background:#00aaff"></div>
-        </div>
+        <h2 id="statusText"></h2>
+        <button id="5x5">Modo 5X5</button>
+        <button id="restartBtn">RESTART</button>
+        <button id="7x7">Modo 7x7</button>
     </div>
 
-    <canvas id="game"></canvas>
+    <div id="Celdas5x5">
+        <div cellIndex="0" class="celda"></div>
+        <div cellIndex="1" class="celda"></div>
+        <div cellIndex="2" class="celda"></div>
+        <div cellIndex="3" class="celda"></div>
+        <div cellIndex="4" class="celda"></div>
+        <div cellIndex="5" class="celda"></div>
+        <div cellIndex="6" class="celda"></div>
+        <div cellIndex="7" class="celda"></div>
+        <div cellIndex="8" class="celda"></div>
+        <div cellIndex="9" class="celda"></div>
+        <div cellIndex="10" class="celda"></div>
+        <div cellIndex="11" class="celda"></div>
+        <div cellIndex="12" class="celda"></div>
+        <div cellIndex="13" class="celda"></div>
+        <div cellIndex="14" class="celda"></div>
+        <div cellIndex="15" class="celda"></div>
+        <div cellIndex="16" class="celda"></div>
+        <div cellIndex="17" class="celda"></div>
+        <div cellIndex="18" class="celda"></div>
+        <div cellIndex="19" class="celda"></div>
+    </div>
 
-    <script>
-        const canvas = document.getElementById("game");
-        const ctx = canvas.getContext("2d");
-
-        canvas.width = 900;
-        canvas.height = 600;
-
-        let keys = {};
-        let mouse = { x: 0, y: 0 };
-
-        document.addEventListener("keydown", e => keys[e.key.toLowerCase()] = true);
-        document.addEventListener("keyup", e => keys[e.key.toLowerCase()] = false);
-
-        canvas.addEventListener("mousemove", e => {
-            const rect = canvas.getBoundingClientRect();
-            mouse.x = e.clientX - rect.left;
-            mouse.y = e.clientY - rect.top;
-        });
-
-        class Player {
-            constructor() {
-                this.x = 450;
-                this.y = 300;
-                this.radius = 18;
-                this.speed = 4;
-                this.hp = 100;
-                this.cooldown = 0;
-                this.maxCooldown = 50;
-            }
-
-            update() {
-                if (keys["w"]) this.y -= this.speed;
-                if (keys["s"]) this.y += this.speed;
-                if (keys["a"]) this.x -= this.speed;
-                if (keys["d"]) this.x += this.speed;
-
-                this.x = Math.max(this.radius, Math.min(canvas.width - this.radius, this.x));
-                this.y = Math.max(this.radius, Math.min(canvas.height - this.radius, this.y));
-
-                if (this.cooldown > 0) this.cooldown--;
-            }
-
-            shoot() {
-                if (this.cooldown === 0) {
-                    const angle = Math.atan2(mouse.y - this.y, mouse.x - this.x);
-                    projectiles.push(new Projectile(this.x, this.y, angle, 10, 6, "player"));
-                    this.cooldown = this.maxCooldown;
-                }
-            }
-
-            draw() {
-                ctx.fillStyle = "#00ff88";
-                ctx.beginPath();
-                ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-                ctx.fill();
-            }
-        }
-
-        class Projectile {
-            constructor(x, y, angle, speed, radius, type) {
-                this.x = x;
-                this.y = y;
-                this.radius = radius;
-                this.vx = Math.cos(angle) * speed;
-                this.vy = Math.sin(angle) * speed;
-                this.type = type;
-            }
-
-            update() {
-                this.x += this.vx;
-                this.y += this.vy;
-            }
-
-            draw() {
-                ctx.fillStyle = this.type === "player" ? "#00aaff" : "#ff3333";
-                ctx.beginPath();
-                ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-                ctx.fill();
-            }
-        }
-
-        let player = new Player();
-        let projectiles = [];
-        let enemyShots = [];
-
-        let spawnTimer = 0;
-        let wave = 1;
-        let gameOver = false;
-
-        canvas.addEventListener("click", () => player.shoot());
-
-        function collision(a, b) {
-            const dx = a.x - b.x;
-            const dy = a.y - b.y;
-            return Math.hypot(dx, dy) < a.radius + b.radius;
-        }
-
-        // 🔥 Spawn que apunta al jugador
-        function spawnWave() {
-
-            let shots = 3 + Math.floor(wave * 0.2); // cada vez más proyectiles
-            let speed = 1 + wave * 0.1;
-            let size = 6 + wave * 0.3; // cada vez más gorditos
-
-            for (let i = 0; i < shots; i++) {
-
-                const side = Math.floor(Math.random() * 4);
-                let x, y;
-
-                if (side === 0) { x = 0; y = Math.random() * canvas.height; }
-                if (side === 1) { x = canvas.width; y = Math.random() * canvas.height; }
-                if (side === 2) { x = Math.random() * canvas.width; y = 0; }
-                if (side === 3) { x = Math.random() * canvas.width; y = canvas.height; }
-
-                const angle = Math.atan2(player.y - y, player.x - x);
-
-                enemyShots.push(new Projectile(x, y, angle, speed, size, "enemy"));
-            }
-
-            wave++;
-        }
-
-        function update() {
-
-            if (gameOver) return;
-
-            player.update();
-
-            projectiles.forEach(p => p.update());
-            enemyShots.forEach(p => p.update());
-
-            // Colisión jugador
-            enemyShots.forEach(p => {
-                if (collision(p, player)) {
-                    player.hp -= 5 + wave * 0.3;
-                    if (player.hp <= 0) gameOver = true;
-                }
-            });
-
-            // Limpiar fuera de pantalla
-            projectiles = projectiles.filter(p =>
-                p.x > 0 && p.x < canvas.width && p.y > 0 && p.y < canvas.height
-            );
-
-            enemyShots = enemyShots.filter(p =>
-                p.x > -100 && p.x < canvas.width + 100 &&
-                p.y > -100 && p.y < canvas.height + 100
-            );
-
-            spawnTimer++;
-            if (spawnTimer > 90) {
-                spawnWave();
-                spawnTimer = 0;
-            }
-
-            document.getElementById("hp").style.width = Math.max(player.hp, 0) * 2 + "px";
-            document.getElementById("cd").style.width = (1 - player.cooldown / player.maxCooldown) * 200 + "px";
-        }
-
-        function draw() {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-            player.draw();
-            projectiles.forEach(p => p.draw());
-            enemyShots.forEach(p => p.draw());
-
-            if (gameOver) {
-                ctx.fillStyle = "white";
-                ctx.font = "50px Arial";
-                ctx.fillText("GAME OVER", 330, 300);
-            }
-        }
-
-        function loop() {
-            update();
-            draw();
-            requestAnimationFrame(loop);
-        }
-
-        loop();
-    </script>
-
-
-
+    </body>
+    <script src="game.js"></script>
 </body>
-
 </html>

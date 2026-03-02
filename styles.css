@@ -1,0 +1,76 @@
+body {
+    background-color: darkblue;
+}
+
+button {
+    width: 120px;
+    height: 50px;
+    background: linear-gradient(45deg, #ff416c, #ff4b2b);
+    border: none;
+    border-radius: 30px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 15px #ff4b2b;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.celda {
+    width: 75px;
+    height: 75px;
+    border: 3px solid;
+    box-shadow: 0 0 0 2px;
+    line-height: 75px;
+    font-size: 50px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.celda:hover{
+    transform: scale(1.08);
+    background-color: blue;
+
+}
+
+
+#Juego {
+    font-family: "Permanent Marker", cursive;
+    text-align: center;
+}
+
+
+#Celdas {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    width: 225px;
+    margin: auto;
+}
+
+#Celdas5x5 {
+    
+    display: grid;
+    grid-template-columns: repeat(5, auto);
+    width: 225px;
+    margin: auto;
+    font-family: "Permanent Marker", cursive;
+    text-align: center;
+}
+
+.ganadora {
+    background-color: gold;
+    box-shadow: 0 0 20px yellow;
+    animation: brillo 0.8s infinite alternate;
+}
+
+.winner {
+    background-color: yellow;
+    color: black;
+}

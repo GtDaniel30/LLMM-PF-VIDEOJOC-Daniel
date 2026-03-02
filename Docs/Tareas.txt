@@ -1,0 +1,14 @@
+HTML ---> HECHO 
+CSS ----> HECHO
+JavaScript
+    IniciarJuego() ----> HECHO
+    cellClicked() ----> HECHO
+    actualizarCola ----> HECHO
+    CambiarJugador ----> HECHO
+    CheckWinner ----> HECHO
+    RestartGame ----> HECHO
+
+Adiciones
+    5X5 -----> NO HECHO
+    7x7 -----> NO HECHO
+    Mejorar CSS ----> NO HECHO
