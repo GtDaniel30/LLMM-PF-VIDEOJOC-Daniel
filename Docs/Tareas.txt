@@ -9,6 +9,11 @@ JavaScript
     RestartGame ----> HECHO
 
 Adiciones
-    5X5 -----> NO HECHO
-    7x7 -----> NO HECHO
-    Mejorar CSS ----> NO HECHO
+    5X5 HTML -----> HECHO
+    5x5 CSS ----> HECHO
+    5X5 JS -----> HECHO
+    7x7 HTML -----> HECHO
+    7x7 CSS ----> HECHO
+    7x7 JS -----> HECHO
+    Mejorar CSS ----> HECHO
+

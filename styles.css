@@ -1,14 +1,14 @@
 body {
-    background-color: darkblue;
+    background-color: #050FA3;
 }
 
 button {
     width: 120px;
     height: 50px;
     background: linear-gradient(45deg, #ff416c, #ff4b2b);
-    border: none;
     border-radius: 30px;
     color: white;
+    border: none;
     font-weight: bold;
     cursor: pointer;
     transition: 0.3s;
@@ -28,7 +28,6 @@ button:hover {
     height: 75px;
     border: 3px solid;
     box-shadow: 0 0 0 2px;
-    line-height: 75px;
     font-size: 50px;
     cursor: pointer;
     transition: transform 0.2s ease;
@@ -36,41 +35,94 @@ button:hover {
 
 .celda:hover{
     transform: scale(1.08);
-    background-color: blue;
-
+    background-color: #1120F0;
+    
 }
-
 
 #Juego {
     font-family: "Permanent Marker", cursive;
     text-align: center;
 }
 
-
 #Celdas {
     display: grid;
     grid-template-columns: repeat(3, auto);
-    width: 225px;
+    width: fit-content;
     margin: auto;
 }
 
+/* BRILLO EN QUIEN GANA */
+
+.win {
+    background-color: yellow;
+    box-shadow: 0 0 15px yellow;
+    transition: background-color 0.4s ease, transform 0.3s ease;
+}
+
+
+/*  5X5 JUEGO  */
+
+
 #Celdas5x5 {
-    
     display: grid;
     grid-template-columns: repeat(5, auto);
-    width: 225px;
-    margin: auto;
+    grid-template-rows: repeat(5, auto);
+    width: fit-content;
+    margin: 20px auto;
     font-family: "Permanent Marker", cursive;
     text-align: center;
 }
 
-.ganadora {
-    background-color: gold;
-    box-shadow: 0 0 20px yellow;
-    animation: brillo 0.8s infinite alternate;
+.celda5x5 {
+    width: 50px;
+    height: 50px;
+    border: 2px solid;
+    box-shadow: 0 0 0 2px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    font-size: 40px;
 }
 
-.winner {
-    background-color: yellow;
-    color: black;
+.celda5x5:hover {
+    transform: scale(1.08);
+    background-color: #1120F0;
+
+}
+
+
+/* 7X7 JUEGO */
+
+#Juego7x7 {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    font-family: "Permanent Marker", cursive;
+    text-align: center;
+    width: 100%;
+}
+
+#Celdas7x7 {
+    display: grid;
+    grid-template-columns: repeat(7, auto);
+    grid-template-rows: repeat(7, auto);
+    width: fit-content;
+    font-family: "Permanent Marker", cursive;
+    text-align: center;
+    margin: 20px auto;
+}
+
+.celda7x7 {
+    width: 50px;
+    height: 50px;
+    border: 2px solid;
+    box-shadow: 0 0 0 2px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    font-size: 40px;
+}
+
+.celda7x7:hover {
+    transform: scale(1.08);
+    background-color: #1120F0;
+
 }

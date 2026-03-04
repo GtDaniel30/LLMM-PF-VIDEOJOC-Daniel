@@ -20,6 +20,7 @@ let running = false;
 
 iniciarJuego();
 
+
 function iniciarJuego() {
     celdas.forEach(cell => cell.addEventListener("click", cellclicked));
     reiniciar.addEventListener("click", restartGame);
@@ -50,6 +51,7 @@ function cambiarJugador() {
 
 function CheckWinner() {
     let roundWon = false;
+    let winningCells = [];
 
     for (let i = 0; i < winConditions.length; i++) {
         const condition  = winConditions[i];
@@ -62,13 +64,18 @@ function CheckWinner() {
         }
         if (celdaA == celdaB && celdaB == celdaC) {
             roundWon = true;
+            winningCells = condition;
             break;
         }
     }
 
     if (roundWon) {
         statusText.textContent = `${currentPlayer} wins!`
-        
+
+        winningCells.forEach(index => {
+            celdas[index].classList.add("win");
+        });
+
         running = false;
     }
     else if (!options.includes("")){
@@ -85,7 +92,8 @@ function restartGame() {
     options = ["", "", "", "", "", "", "", "", "",]
     statusText.textContent = `${currentPlayer}'s Turn`;
     celdas.forEach(cell => cell.textContent = "");
+    celdas.forEach(cell => {
+        cell.classList.remove("win");
+    });
     running = true;
 }
-
-
