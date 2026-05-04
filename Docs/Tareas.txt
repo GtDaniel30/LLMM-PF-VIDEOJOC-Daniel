@@ -17,3 +17,12 @@ Adiciones
     7x7 JS -----> HECHO
     Mejorar CSS ----> HECHO
 
+Proximas Tareas
+    Login ----> PENDIENTE
+    Register ----> PENDIENTE
+    Backend: modo online con salas para jugar contra otros usuarios ----> PENDIENTE
+    Backend: chat en tiempo real durante las partidas ----> PENDIENTE
+    Backend: clasificacion de jugadores ----> PENDIENTE
+    Backend: perfiles de usuario ----> PENDIENTE
+    Backend: estadisticas de usuario (victorias, derrotas y porcentaje de victorias) ----> PENDIENTE
+

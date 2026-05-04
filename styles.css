@@ -2,6 +2,12 @@ body {
     background-color: #050FA3;
 }
 
+h3 {
+    position: fixed;   
+    right: 200px ;
+    font-size: 30px;
+}
+
 button {
     width: 210px;
     height: 100px;
