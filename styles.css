@@ -2,38 +2,36 @@ body {
     background-color: #050FA3;
 }
 
+button.juego {
+    height: 100px;
+    width: 120px;
+    background-color: red;
+    font-family: "Permanent Marker", cursive;
+}
+
 h3 {
     position: fixed;   
     right: 200px ;
-    font-size: 30px;
+    font-size: 23px;
 }
 
-button {
-    width: 210px;
-    height: 100px;
-    background: linear-gradient(45deg, #ff416c, #ff4b2b);
-    border-radius: 50px;
+h3:hover{
     color: white;
-    border: none;
-    font-weight: bold;
-    cursor: pointer;
-    transition: 0.3s;
-    margin-left: 5px;
-    margin-right: 5px;
-    font-size: 20px;
 }
+
 
 h1{
     margin-top: 5px;
     margin-bottom: 10px;
     font-size: 80px;
+    background-color: gray;
 }
 
 h2{
     font-size: 50px;
 }
 
-button:hover {
+.juego:hover {
     transform: scale(1.1);
     box-shadow: 0 0 15px #ff4b2b;
     margin-left: 20px;
@@ -142,4 +140,70 @@ button:hover {
     transform: scale(1.08);
     background-color: #1120F0;
 
+}
+
+/*LOGIN CSS */
+
+#formulario{
+    background-color: gray;
+    margin-top: 10px;
+    height: 50px;
+    width: 100px;
+}
+
+
+.container {
+    width: 400px;
+    margin: 100px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+}
+
+.auth-link {
+    margin-top: 10px;
+    text-align: center;
+    font-size: 15px;
+}
+
+.auth-link a {
+    color: #0d6efd;
+    text-decoration: none;
+}
+
+.auth-link a:hover {
+    text-decoration: underline;
+}
+
+header {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    background: #6b1414;
+    color: white;
+    padding: 10px 20px;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.user {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+}
+
+.icon {
+    font-size: 18px;
+}
+
+.logout {
+    width: auto;
+    padding: 5px 10px;
+    font-size: 12px;
+    cursor: pointer;
 }

@@ -1,0 +1,30 @@
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <!-- Estilos de la interfaz -->
+    <link rel="stylesheet" href="../styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <h2>Login</h2>
+        <!-- Formulario que JavaScript enviará con fetch() -->
+        <form id="loginForm">
+            <!-- Campo del nombre de usuario -->
+            <input type="text" id="username" placeholder="Usuario" required>
+            <!-- Campo de la contraseña -->
+            <input type="password" id="password" placeholder="ContraseÃ±a" required>
+            <button id="formulario" type="submit">Entrar</button>
+        </form>
+        <!-- Aquí se muestran errores del login -->
+        <p id="error"></p>
+        <!-- Enlace a la página de registro -->
+        <p class="auth-link">¿No tienes cuenta? <a href="./register.html">Registrate</a></p>
+    </div>
+    <!-- Lógica del formulario de acceso -->
+    <script src="../public/js/login.js"></script>
+</body>
+
+</html>
