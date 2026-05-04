@@ -19,7 +19,7 @@ document.getElementById("loginForm").addEventListener("submit", async (e) => {
 
     if (data.success) {
         // Si el login es correcto, entra en la zona privada.
-        window.location.href = "dashboard.html";
+        window.location.href = "index.html";
     } else {
         // Si falla, muestra el mensaje devuelto por PHP.
         document.getElementById("error").innerText = data.message;
