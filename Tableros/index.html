@@ -8,11 +8,15 @@
     <link rel="shortcut icon" href="../Assets/logo pagina.png" type="image/x-icon">
 </head>
 <body>
+    <div class="auth-actions">
+        <a class="auth-link-button" id="loginLink" href="../public/login.html">Iniciar sesion</a>
+        <span class="auth-user" id="userInfo" hidden></span>
+        <button class="auth-link-button logout-button" id="logoutBtn" type="button" hidden>Cerrar sesion</button>
+    </div>
 
-    <a href="../public/login.html"><h3>Iniciar Sesión 👤</h3></a>
     <div id="Juego">
         <h1>TIC TAC TOE</h1>
-        <div id= "Celdas">
+        <div id="Celdas">
             <div cellIndex="0" class="celda"></div>
             <div cellIndex="1" class="celda"></div>
             <div cellIndex="2" class="celda"></div>
@@ -25,13 +29,15 @@
         </div>
         <h2 id="statusText"></h2>
         <a href="5x5.html">
-        <button class="juego" id="5x5">Modo 5X5</button>
+            <button class="juego" id="5x5">Modo 5X5</button>
         </a>
         <button class="juego" id="restartBtn">RESTART</button>
         <a href="./7x7.html">
-        <button class="juego" id="7x7">Modo 7x7</button>
+            <button class="juego" id="7x7">Modo 7x7</button>
         </a>
     </div>
+
+    <script src="../public/js/index-auth.js"></script>
     <script src="../game.js"></script>
 </body>
 </html>
