@@ -1,0 +1,253 @@
+body {
+    background-color: #050FA3;
+}
+
+button.juego {
+    height: 100px;
+    width: 120px;
+    background-color: red;
+    font-family: "Permanent Marker", cursive;
+}
+
+h3 {
+    position: fixed;   
+    right: 200px ;
+    font-size: 23px;
+}
+
+h3:hover{
+    color: white;
+}
+
+.auth-actions {
+    position: fixed;
+    top: 20px;
+    right: 30px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+[hidden] {
+    display: none !important;
+}
+
+.auth-link-button,
+.auth-user {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 120px;
+    padding: 10px 14px;
+    border: 2px solid black;
+    background-color: white;
+    color: black;
+    font-size: 18px;
+    font-family: "Permanent Marker", cursive;
+    text-decoration: none;
+}
+
+.auth-link-button {
+    cursor: pointer;
+}
+
+.auth-link-button:hover {
+    color: white;
+    background-color: red;
+}
+
+.logout-button {
+    width: auto;
+}
+
+
+h1{
+    margin-top: 5px;
+    margin-bottom: 10px;
+<<<<<<< HEAD:styles.css
+    font-size: 80px;
+=======
+    font-size: 80px;    
+>>>>>>> 92cdc73c4c25ca022962a2081fff8eec2d9d17ae:public/css/styles.css
+}
+
+h2{
+    font-size: 50px;
+}
+
+.juego:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 15px #ff4b2b;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.celda {
+    width: 150px;
+    height: 150px;
+    border: 5px solid;
+    box-shadow: 0 0 0 2px;
+    font-size: 100px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.celda:hover{
+    transform: scale(1.08);
+    background-color: #1120F0;
+    
+}
+
+#Juego {
+    font-family: "Permanent Marker", cursive;
+    text-align: center;
+}
+
+#Celdas {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    width: fit-content;
+    margin: auto;
+}
+
+/* BRILLO EN QUIEN GANA */
+
+.win {
+    background-color: yellow;
+    box-shadow: 0 0 15px yellow;
+    transition: background-color 0.4s ease, transform 0.3s ease;
+}
+
+
+/*  5X5 JUEGO  */
+
+
+#Celdas5x5 {
+    display: grid;
+    grid-template-columns: repeat(5, auto);
+    grid-template-rows: repeat(5, auto);
+    width: fit-content;
+    margin: 20px auto;
+    font-family: "Permanent Marker", cursive;
+    text-align: center;
+}
+
+.celda5x5 {
+    width: 88px;
+    height: 88px;
+    border: 4px solid;
+    box-shadow: 0 0 0 2px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    font-size: 75px;
+}
+
+.celda5x5:hover {
+    transform: scale(1.08);
+    background-color: #1120F0;
+
+}
+
+
+/* 7X7 JUEGO */
+
+#Juego7x7 {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    font-family: "Permanent Marker", cursive;
+    text-align: center;
+    width: 100%;
+}
+
+#Celdas7x7 {
+    display: grid;
+    grid-template-columns: repeat(7, auto);
+    grid-template-rows: repeat(7, auto);
+    width: fit-content;
+    font-family: "Permanent Marker", cursive;
+    text-align: center;
+    margin: 20px auto;
+}
+
+.celda7x7 {
+    width: 90px;
+    height: 90px;
+    border: 4px solid;
+    box-shadow: 0 0 0 2px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    font-size: 75px;
+}
+
+.celda7x7:hover {
+    transform: scale(1.08);
+    background-color: #1120F0;
+
+}
+
+/*LOGIN CSS */
+
+#formulario{
+    background-color: gray;
+    margin-top: 10px;
+    height: 50px;
+    width: 100px;
+}
+
+
+.container {
+    width: 400px;
+    margin: 100px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+}
+
+.auth-link {
+    margin-top: 10px;
+    text-align: center;
+    font-size: 15px;
+}
+
+.auth-link a {
+    color: #0d6efd;
+    text-decoration: none;
+}
+
+.auth-link a:hover {
+    text-decoration: underline;
+}
+
+header {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    background: #6b1414;
+    color: white;
+    padding: 10px 20px;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.user {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+}
+
+.icon {
+    font-size: 18px;
+}
+
+.logout {
+    width: auto;
+    padding: 5px 10px;
+    font-size: 12px;
+    cursor: pointer;
+}
