@@ -1,30 +1,33 @@
+<!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    <!-- Estilos de la interfaz -->
-    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="shortcut icon" href="../Assets/logo pagina.png" type="image/x-icon">
 </head>
-
 <body>
-    <div class="container">
-        <h2>Login</h2>
-        <!-- Formulario que JavaScript enviará con fetch() -->
-        <form id="loginForm">
-            <!-- Campo del nombre de usuario -->
-            <input type="text" id="username" placeholder="Usuario" required>
-            <!-- Campo de la contraseña -->
-            <input type="password" id="password" placeholder="ContraseÃ±a" required>
-            <button id="formulario" type="submit">Entrar</button>
+    <div class="container auth-card">
+        <h2>Iniciar sesión</h2>
+        <form id="loginForm" class="auth-form">
+            <label class="auth-field" for="username">
+                <span>Nombre de usuario</span>
+                <input type="text" id="username" placeholder="Escribe tu usuario" required>
+            </label>
+            <label class="auth-field" for="password">
+                <span>Contraseña</span>
+                <input type="password" id="password" placeholder="Escribe tu contraseña" required>
+            </label>
+           
+            <button id="formulario" type="submit" aria-label="Entrar">→</button>
         </form>
-        <!-- Aquí se muestran errores del login -->
         <p id="error"></p>
-        <!-- Enlace a la página de registro -->
-        <p class="auth-link">¿No tienes cuenta? <a href="./register.html">Registrate</a></p>
+        <p class="auth-link">¿No puedes iniciar sesión?</p>
+        <p class="auth-link auth-link-strong"><a href="./register.html">Crear cuenta</a></p>
     </div>
-    <!-- Lógica del formulario de acceso -->
-    <script src="../public/js/login.js"></script>
-</body>
 
+    <script src="./js/app-paths.js"></script>
+    <script src="./js/login.js"></script>
+</body>
 </html>

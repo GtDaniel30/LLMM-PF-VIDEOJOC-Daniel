@@ -20,11 +20,11 @@ Adiciones
 ------------------------------------------------------
 
 Proximas Tareas
-    Login ----> TRABAJANDO
-    Logout ---- > PENDIENTE
-    Session ------> PENDIENTE
-    Register ----> PENDIENTE
-    Backend: modo online con salas para jugar contra otros usuarios ----> PENDIENTE
+    Login ----> HECHO
+    Logout ---- > HECHO
+    Session ------> HECHO
+    Register ----> HECHO
+    Backend: modo online con salas para jugar contra otros usuarios ----> TRABAJANDO
     Backend: chat en tiempo real durante las partidas ----> PENDIENTE
     Backend: clasificacion de jugadores ----> PENDIENTE
     Backend: perfiles de usuario ----> PENDIENTE

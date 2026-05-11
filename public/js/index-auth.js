@@ -18,7 +18,7 @@ function showLoggedInState(username) {
 
 async function updateAuthState() {
     try {
-        const res = await fetch("../backend/session.php");
+        const res = await fetch(window.APP_PATHS.url("backend/session.php"));
         const data = await res.json();
 
         if (data.logged && data.user) {
@@ -33,10 +33,10 @@ async function updateAuthState() {
 
 logoutBtn.addEventListener("click", async () => {
     try {
-        await fetch("../backend/logout.php");
+        await fetch(window.APP_PATHS.url("backend/logout.php"));
     } finally {
         showLoggedOutState();
-        window.location.reload();
+        window.location.href = window.APP_PATHS.url("index.html");
     }
 });
 

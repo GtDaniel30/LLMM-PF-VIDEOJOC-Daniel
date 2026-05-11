@@ -9,7 +9,7 @@ document.getElementById("registerForm").addEventListener("submit", async (e) => 
     const message = document.getElementById("message");
 
     // Manda usuario y contraseña al backend en formato JSON.
-    const res = await fetch("../backend/register.php", {
+    const res = await fetch(window.APP_PATHS.url("backend/register.php"), {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ username, password })
@@ -23,7 +23,7 @@ document.getElementById("registerForm").addEventListener("submit", async (e) => 
     if (data.success) {
         // Si el registro fue correcto, redirige al login tras una breve pausa.
         setTimeout(() => {
-            window.location.href = "login.html";
+            window.location.href = window.APP_PATHS.url("public/login.html");
         }, 1000);
     }
 });

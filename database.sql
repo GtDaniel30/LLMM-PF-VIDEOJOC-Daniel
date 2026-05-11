@@ -1,14 +1,22 @@
 CREATE DATABASE IF NOT EXISTS tictactoe CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+
 USE tictactoe;
 
 CREATE TABLE IF NOT EXISTS users (
   id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
   username VARCHAR(50) NOT NULL UNIQUE,
   password VARCHAR(255) NOT NULL,
-  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
-INSERT INTO users (username, password) VALUES
-  ('admin', '12345aA'),
+CREATE TABLE games {
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  player1 INT,
+  player2 INT,
+  board VARCHAR(9) DEFAULT '---------',
+  turn INT,
+  winner INT DEFAULT NULL,
+  FOREIGN KEY (player1) REFERENCES users(id),
+  FOREIGN KEY (player2) REFERENCES users(id)
+};
 
-ON DUPLICATE KEY UPDATE username = VALUES(username);
+

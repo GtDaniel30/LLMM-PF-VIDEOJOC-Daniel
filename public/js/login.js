@@ -8,7 +8,7 @@ document.getElementById("loginForm").addEventListener("submit", async (e) => {
     const password = document.getElementById("password").value;
 
     // Envía las credenciales al backend en formato JSON.
-    const res = await fetch("../backend/login.php", {
+    const res = await fetch(window.APP_PATHS.url("backend/login.php"), {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ username, password })
@@ -19,7 +19,7 @@ document.getElementById("loginForm").addEventListener("submit", async (e) => {
 
     if (data.success) {
         // Si el login es correcto, entra en la zona privada.
-        window.location.href = "dashboard.html";
+        window.location.href = window.APP_PATHS.url("Tableros/index.html");
     } else {
         // Si falla, muestra el mensaje devuelto por PHP.
         document.getElementById("error").innerText = data.message;
