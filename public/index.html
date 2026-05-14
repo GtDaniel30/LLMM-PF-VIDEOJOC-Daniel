@@ -18,10 +18,11 @@
     <div id="Juego">
         <h1>TIC TAC TOE</h1>
         <div class="match-toolbar">
-            <button class="juego match-toolbar-btn" type="button">Crear partida</button>
-            <input class="match-toolbar-code" type="text">
-            <button class="juego match-toolbar-btn" type="button">Unirse</button>
+            <button class="juego match-toolbar-btn" id="createGameBtn" type="button">Crear partida</button>
+            <input class="match-toolbar-code" id="joinGameInput" type="text" placeholder="ID partida">
+            <button class="juego match-toolbar-btn" id="joinGameBtn" type="button">Unirse</button>
         </div>
+        <p id="matchInfo"></p>
         <div id="Celdas">
             <div cellIndex="0" class="celda"></div>
             <div cellIndex="1" class="celda"></div>
@@ -34,8 +35,9 @@
             <div cellIndex="8" class="celda"></div>
         </div>
         <h2 id="statusText"></h2>
-     
-        <button class="juego" id="restartBtn">RESTART</button>
+        <div class="match-actions">
+            <button class="juego" id="leaveGameBtn" type="button" hidden>SALIR</button>
+        </div>
        
     </div>
 

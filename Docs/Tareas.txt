@@ -24,8 +24,8 @@ Proximas Tareas
     Logout ---- > HECHO
     Session ------> HECHO
     Register ----> HECHO
-    Backend: modo online con salas para jugar contra otros usuarios ----> TRABAJANDO
-    Backend: chat en tiempo real durante las partidas ----> PENDIENTE
+    Backend: modo online con salas para jugar contra otros usuarios ----> HECHO
+    Backend: chat en tiempo real durante las partidas ----> TRABAJANDO
     Backend: clasificacion de jugadores ----> PENDIENTE
     Backend: perfiles de usuario ----> PENDIENTE
     Backend: estadisticas de usuario (victorias, derrotas y porcentaje de victorias) ----> PENDIENTE

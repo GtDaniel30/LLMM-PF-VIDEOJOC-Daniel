@@ -20,7 +20,7 @@ try {
   // Escapa el usuario antes de construir la consulta SQL.
   $safeUsername = $connection->real_escape_string($username);
   // Busca un único usuario por su nombre.
-  $sql = "SELECT username, password FROM users WHERE username = '{$safeUsername}' LIMIT 1";
+  $sql = "SELECT id, username, password FROM users WHERE username = '{$safeUsername}' LIMIT 1";
   $result = $connection->query($sql);
   // Si hay resultado, lo convierte en array; si no, queda en null.
   $user = $result ? $result->fetch_assoc() : null;
@@ -31,6 +31,7 @@ try {
   // En producción sería mejor usar password_verify() y no texto plano.
   if ($user && $password === $user['password']) {
     $_SESSION['user'] = $user['username'];
+    $_SESSION['user_id'] = (int) $user['id'];
     echo json_encode(["success" => true]);
   } else {
     // Si falla, se devuelve un mensaje para que JS lo muestre en pantalla.
