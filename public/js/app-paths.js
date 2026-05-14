@@ -1,7 +1,7 @@
 function getAppBasePath() {
     const pathName = window.location.pathname;
     const segments = pathName.split("/").filter(Boolean);
-    const appFolders = ["public", "Tableros", "backend", "ScriptJuego", "Assets"];
+    const appFolders = ["public", "backend", "ScriptJuego", "Assets"];
     const folderIndex = segments.findIndex((segment) => appFolders.includes(decodeURIComponent(segment)));
 
     if (folderIndex >= 0) {

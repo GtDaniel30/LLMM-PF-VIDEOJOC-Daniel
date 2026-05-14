@@ -4,7 +4,7 @@ async function redirectIfLoggedIn() {
         const data = await res.json();
 
         if (data.logged) {
-            window.location.href = window.APP_PATHS.url("Tableros/index.html");
+            window.location.href = window.APP_PATHS.url("public/index.html");
         }
     } catch (error) {
         // Si falla la comprobacion, la portada publica sigue visible.

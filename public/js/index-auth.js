@@ -36,7 +36,7 @@ logoutBtn.addEventListener("click", async () => {
         await fetch(window.APP_PATHS.url("backend/logout.php"));
     } finally {
         showLoggedOutState();
-        window.location.href = window.APP_PATHS.url("index.html");
+        window.location.href = window.APP_PATHS.url("public/index.html");
     }
 });
 
