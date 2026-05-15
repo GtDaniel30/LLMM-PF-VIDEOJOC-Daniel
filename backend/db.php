@@ -3,7 +3,7 @@
 session_start();
 
 $conn = new mysqli(
- "projectedani.infinityfreeapp.comm",
+ "projectedani.infinityfreeapp.com",
  "if0_41931698",
  "mamadeocallao",
  "if0_41931698_tictactoe"
