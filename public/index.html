@@ -14,32 +14,41 @@
         <button class="auth-link-button logout-button" id="logoutBtn" type="button" hidden>Cerrar sesion</button>
     </div>
 
-    
-    <div id="Juego">
-        <h1>TIC TAC TOE</h1>
-        <div class="match-toolbar">
-            <button class="juego match-toolbar-btn" id="createGameBtn" type="button">Crear partida</button>
-            <input class="match-toolbar-code" id="joinGameInput" type="text" placeholder="ID partida">
-            <button class="juego match-toolbar-btn" id="joinGameBtn" type="button">Unirse</button>
+    <main class="game-layout">
+        <div id="Juego">
+            <h1>TIC TAC TOE</h1>
+            <div class="match-toolbar">
+                <button class="juego match-toolbar-btn" id="createGameBtn" type="button">Crear partida</button>
+                <input class="match-toolbar-code" id="joinGameInput" type="text" placeholder="ID partida">
+                <button class="juego match-toolbar-btn" id="joinGameBtn" type="button">Unirse</button>
+            </div>
+            <p id="matchInfo"></p>
+            <div id="Celdas">
+                <div cellIndex="0" class="celda"></div>
+                <div cellIndex="1" class="celda"></div>
+                <div cellIndex="2" class="celda"></div>
+                <div cellIndex="3" class="celda"></div>
+                <div cellIndex="4" class="celda"></div>
+                <div cellIndex="5" class="celda"></div>
+                <div cellIndex="6" class="celda"></div>
+                <div cellIndex="7" class="celda"></div>
+                <div cellIndex="8" class="celda"></div>
+            </div>
+            <h2 id="statusText"></h2>
+            <div class="match-actions">
+                <button class="juego" id="leaveGameBtn" type="button" hidden>SALIR</button>
+            </div>
         </div>
-        <p id="matchInfo"></p>
-        <div id="Celdas">
-            <div cellIndex="0" class="celda"></div>
-            <div cellIndex="1" class="celda"></div>
-            <div cellIndex="2" class="celda"></div>
-            <div cellIndex="3" class="celda"></div>
-            <div cellIndex="4" class="celda"></div>
-            <div cellIndex="5" class="celda"></div>
-            <div cellIndex="6" class="celda"></div>
-            <div cellIndex="7" class="celda"></div>
-            <div cellIndex="8" class="celda"></div>
-        </div>
-        <h2 id="statusText"></h2>
-        <div class="match-actions">
-            <button class="juego" id="leaveGameBtn" type="button" hidden>SALIR</button>
-        </div>
-       
-    </div>
+
+        <aside class="chat-panel">
+            <div class="chat-box">
+                <div class="chat-messages"></div>
+                <div class="chat-input-area">
+                    <input class="chat-input" type="text" placeholder="Mensaje" aria-label="Mensaje del chat">
+                </div>
+            </div>
+        </aside>
+    </main>
 
     <script src="./js/app-paths.js"></script>
     <script src="./js/index-auth.js"></script>
